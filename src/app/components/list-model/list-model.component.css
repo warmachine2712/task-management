@@ -1,0 +1,46 @@
+
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    width: 16%;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color:gray;
+    color: white;
+}
+
+.main-task {
+    background-color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.sub-task {
+    background-color: darkgray;
+}
+
+.toggle-icon {
+    transition: transform 0.3s ease;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.toggle-icon.open {
+    transform: rotate(90deg);
+}
+
+.priority-high {
+    color: red;
+    font-weight: bold;
+}
+
+.priority-medium {
+    color: orange;
+}
+
+.priority-low {
+    color: green;
+}

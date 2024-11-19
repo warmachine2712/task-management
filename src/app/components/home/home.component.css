@@ -1,0 +1,37 @@
+/* General Styling */
+
+  .upper{
+    z-index: 1;
+  }
+  .navbar {
+   
+    align-items: flex-start; /* Align to the left */
+    background-color: #333;
+ 
+    color: #fff;
+    
+   
+    height: 100vh; /* Make the navbar take full height */
+     /* Set a width for the sidebar */
+     /* Make sure it stays on top */
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+   
+  }
+  
+  .nav-list a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  
+  

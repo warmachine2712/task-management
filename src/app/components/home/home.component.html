@@ -1,0 +1,15 @@
+<div class="container border upper">
+  <div class="row">
+    <div class="col-2 border">
+      <nav class="navbar">
+        <ul class="nav-list" [ngClass]="{ active: isMenuActive }">
+          <li><button (click)="loadList()">task</button></li>
+          <li><button (click)="loadCreatTask()">Create Task</button></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-10 border">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+<div class="container">
+  <h2>Tasks to be Completed</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Task Name</th>
+        <th>Deadline</th>
+        <th>Progress</th>
+        <th>Status</th>
+        <th>Priority</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Main Task Row -->
+      <ng-container *ngFor="let task of tasks">
+        <tr class="main-task" (click)="toggleSubTasks(task)">
+          <td>
+            <span class="toggle-icon" [class.open]="task.expanded"
+              >&#9654;</span
+            >
+            {{ task.date }}
+          </td>
+          <td (click)="toggleSubTasks(task)">{{ task.name }}</td>
+          <td>{{ task.deadline }}</td>
+          <td>{{ task.progress }}</td>
+          <td>{{ task.status }}</td>
+          <td
+            [ngClass]="{
+              'priority-high': task.priority === 'High',
+              'priority-medium': task.priority === 'Medium',
+              'priority-low': task.priority === 'Low'
+            }"
+          >
+            {{ task.priority }}
+          </td>
+        </tr>
+
+        <!-- Sub-task Rows -->
+        <ng-container *ngIf="task.expanded">
+          <tr *ngFor="let subTask of task.subTasks" class="sub-task">
+            <td>{{ subTask.date }}</td>
+            <td>{{ subTask.name }}</td>
+            <td>{{ subTask.deadline }}</td>
+            <td>{{ subTask.progress }}</td>
+            <td>{{ subTask.status }}</td>
+            <td
+              [ngClass]="{
+                'priority-high': subTask.priority === 'High',
+                'priority-medium': subTask.priority === 'Medium',
+                'priority-low': subTask.priority === 'Low'
+              }"
+            >
+              {{ subTask.priority }}
+            </td>
+          </tr>
+        </ng-container>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

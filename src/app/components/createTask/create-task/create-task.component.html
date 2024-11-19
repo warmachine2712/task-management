@@ -1,0 +1,94 @@
+<h2>Task</h2>
+<div class="row">
+  <div class="col-5 pt-2">
+    Task Name:<input
+      type="text"
+      class="form-control"
+      [(ngModel)]="newTask.name"
+      placeholder="Task Name"
+    />
+  </div>
+</div>
+<div class="row">
+  <div class="col-12 pt-2">
+    Task Priority:
+    <textarea
+      class="form-control"
+      rows="3"
+      [(ngModel)]="newTask.priority"
+      placeholder="Task priority"
+    ></textarea>
+  </div>
+</div>
+<div class="row pt-2">
+  <div class="col-6">
+    Task DeadLine<input
+      type="date"
+      [(ngModel)]="newTask.deadline"
+      placeholder="Task Deadline"
+      class="form-control"
+    />
+  </div>
+  <div class="col">
+    <button (click)="submitTask()" class="btn">Submit</button>
+  </div>
+</div>
+
+<hr style="color: red" />
+<br />
+<h2>Sub Task</h2>
+<div class="row">
+  <div class="col-5 pt-2">
+    Sub Task Name:<input
+      type="text"
+      class="form-control"
+      [(ngModel)]="newSubTask.name"
+      placeholder="Sub Task Name"
+    />
+  </div>
+</div>
+<div class="row">
+  <div class="col-12 pt-2">
+    Sub Task Priority:
+    <textarea
+      class="form-control"
+      rows="3"
+      [(ngModel)]="newSubTask.priority"
+      placeholder="Sub Task priority"
+    ></textarea>
+  </div>
+</div>
+<div class="row pt-2">
+  <div class="col-6">
+    Sub Task DeadLine<input
+      type="date"
+      [(ngModel)]="newSubTask.deadline"
+      placeholder="Sub Task Deadline"
+      class="form-control"
+    />
+  </div>
+
+  <div class="row pt-2">
+    <div class="col">
+      <mat-form-field>
+        <mat-label>Main Task</mat-label>
+        <mat-select [(ngModel)]="mainTask">
+          @for (task of taskData; track task) {
+          <mat-option [value]="task.id">{{ task.name }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="col">
+    <button (click)="submitSubTask()" class="btn">Submit</button>
+  </div>
+</div>
+
+<!--/priority: string;
+date: Date;
+/name: String;
+/deadline: Date;
+progress: Number,
+/status: String,
+subnewTasks: InewTask[]-->
